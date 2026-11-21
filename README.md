@@ -1,5 +1,5 @@
 ![CI](https://github.com/lansadorxt/juegos/actions/workflows/ci.yml/badge.svg)
-[![Coverage](https://codecov.io/gh/lansadorxt/juegos/branch/master/graph/badge.svg)](https://codecov.io/gh/lansadorxt/juegos)
+[![Coverage](https://codecov.io/gh/lansadorxt/juegos/branch/main/graph/badge.svg)](https://codecov.io/gh/lansadorxt/juegos)
 
 # Pruebas Unitarias con `unittest` — Microaplicación de Videojuegos (Flask)
 
