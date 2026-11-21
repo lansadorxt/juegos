@@ -1,3 +1,4 @@
+import os
 import logging
 from flask import Flask, render_template, request, redirect, url_for, jsonify, abort
 from flask_login import LoginManager, login_required
@@ -8,7 +9,10 @@ from extensions import db
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/juegos'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    'SQLALCHEMY_DATABASE_URI',
+    'mysql+pymysql://root:root@localhost/juegos'
+)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'una_clave_muy_secreta_y_dificil'
 
@@ -36,9 +40,6 @@ app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
 from api.routes import api_bp
 app.register_blueprint(api_bp, url_prefix='/api')
-
-with app.app_context():
-    db.create_all()
 
 
 @app.errorhandler(HTTPException)
@@ -134,4 +135,6 @@ def forzar_error_500():
         raise ex
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(host='0.0.0.0', port=8000, debug=False)
