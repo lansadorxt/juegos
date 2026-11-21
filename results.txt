@@ -1,0 +1,41 @@
+test_api_delete_eliminar_juego (test_api.TestAPI.test_api_delete_eliminar_juego)
+Verifica la eliminación de un juego mediante DELETE /api/juegos/<id> (204). ... C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegos\api\routes.py:62: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegos\api\routes.py:44: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+ok
+test_api_get_juego_por_id_y_404 (test_api.TestAPI.test_api_get_juego_por_id_y_404)
+Verifica la consulta individual (200) y el manejo de ID inexistente (404). ... ok
+test_api_get_lista_juegos (test_api.TestAPI.test_api_get_lista_juegos)
+Verifica que GET /api/juegos retorne 200 OK y una lista JSON. ... ok
+test_api_post_crear_juego (test_api.TestAPI.test_api_post_crear_juego)
+Verifica que POST /api/juegos cree un recurso y devuelva 201 Created. ... ok
+test_api_post_datos_incompletos_400 (test_api.TestAPI.test_api_post_datos_incompletos_400)
+Verifica que POST sin campos obligatorios devuelva 400 Bad Request. ... ok
+test_api_put_actualizar_juego (test_api.TestAPI.test_api_put_actualizar_juego)
+Verifica la actualización completa mediante PUT /api/juegos/<id>. ... C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegos\api\routes.py:51: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+ok
+test_actualizar_juego (test_models.TestModels.test_actualizar_juego)
+Verifica la modificación de los atributos de un videojuego existente. ... ok
+test_crear_juego (test_models.TestModels.test_crear_juego)
+Verifica la inserción y consulta de un videojuego en la base de datos. ... ok
+test_crear_usuario (test_models.TestModels.test_crear_usuario)
+Verifica la creación de un usuario, protección de lectura y hash seguro. ... ok
+test_eliminar_juego (test_models.TestModels.test_eliminar_juego)
+Verifica el borrado de un registro de videojuego. ... ok
+test_acceso_ruta_protegida_con_sesion (test_routes.TestRoutes.test_acceso_ruta_protegida_con_sesion)
+Verifica el inicio de sesión y el acceso permitido a /juegos. ... ok
+test_guardar_juego_autenticado (test_routes.TestRoutes.test_guardar_juego_autenticado)
+Verifica la creación de un juego desde el formulario web autenticado. ... ok
+test_ruta_inexistente_devuelve_404 (test_routes.TestRoutes.test_ruta_inexistente_devuelve_404)
+Verifica que una URL inexistente active el manejador personalizado 404. ... ok
+test_ruta_login_publica (test_routes.TestRoutes.test_ruta_login_publica)
+Verifica que la vista de inicio de sesión cargue correctamente (200 OK). ... ok
+test_ruta_protegida_sin_sesion_redirige (test_routes.TestRoutes.test_ruta_protegida_sin_sesion_redirige)
+Verifica que acceder a /juegos sin iniciar sesión redirija al login (302). ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.761s
+
+OK
